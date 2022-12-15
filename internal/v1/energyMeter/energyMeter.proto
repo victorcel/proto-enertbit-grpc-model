@@ -6,7 +6,7 @@ syntax = "proto3";
 
 package proto.energyMeter.v1;
 
-option go_package = "https://github.com/victorcel/proto-enertbit-grpc-models/pkg/v1/energyMeter;energyMeterv1";
+option go_package = "github.com/victorcel/proto-enertbit-grpc-models/pkg/v1/energyMeter;energyMeterv1";
 
 message EnergyMeters{
   // @inject_tag: bson:"id" json:"id"

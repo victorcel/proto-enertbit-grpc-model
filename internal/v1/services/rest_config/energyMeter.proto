@@ -6,7 +6,7 @@ import "internal/v1/energyMeter/energyMeter.proto";
 
 package proto.energyMeterApi.v1;
 
-option go_package = "https://github.com/victorcel/proto-enertbit-grpc-models/pkg/v1/services/rest_config/energyMeter;energyMeterApiv1";
+option go_package = "github.com/victorcel/proto-enertbit-grpc-models/pkg/v1/services/rest_config/energyMeter;energyMeterApiv1";
 
 
 message RequestEnergyMeter {
