@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+// Protobuf imports
+import "internal/v1/energyMeter/energyMeter.proto";
+// Local Imports
+
+package proto.energyMeterApi.v1;
+
+option go_package = "https://github.com/victorcel/proto-enertbit-grpc-models/pkg/v1/services/rest_config/energyMeter;energyMeterApiv1";
+
+
+message RequestEnergyMeter {
+
+  // @inject_tag: bson:"energy_meter" json:"energy_meter"
+  energyMeter.v1.EnergyMeters energy_meter = 1;
+
+}
+
+message ResponseEnergyMeter {
+
+  // @inject_tag: bson:"energy_meter" json:"energy_meter"
+  energyMeter.v1.EnergyMeters energy_meter = 1;
+
+}
+
+message ResponseGetEnergyMeters {
+
+  // @inject_tag: bson:"energy_meter" json:"energy_meter"
+  repeated energyMeter.v1.EnergyMeters energy_meter = 1;
+
+}
+
+message RequestUpdateEnergyMeters {
+
+  // @inject_tag: bson:"id_request" json:"id_request"
+  energyMeter.v1.IdRequest id_request = 1;
+
+  // @inject_tag: bson:"energy_meter" json:"energy_meter"
+  energyMeter.v1.EnergyMeters energy_meter = 2;
+
+}
+
+message DeleteEnergyMeters {
+
+  // @inject_tag: bson:"id_request" json:"id_request"
+  energyMeter.v1.IdRequest id_request = 1;
+
+}
+
+service EnergyMetersServices{
+
+  rpc GetEnergyMeters(RequestEnergyMeter) returns(ResponseGetEnergyMeters);
+
+  rpc CreateEnergyMeters(RequestEnergyMeter) returns(ResponseEnergyMeter);
+
+  rpc UpdateEnergyMeters(RequestUpdateEnergyMeters) returns(energyMeter.v1.BoolResponse);
+
+  rpc DeleteEnergyMeters(energyMeter.v1.IdRequest) returns(energyMeter.v1.BoolResponse);
+
+  rpc InstalledCutOrInactiveEnergyMeter(RequestEnergyMeter) returns(ResponseGetEnergyMeters);
+
+  rpc RecentInstallationEnergyMeter(RequestEnergyMeter) returns(ResponseEnergyMeter);
+
+}

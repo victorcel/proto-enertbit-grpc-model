@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+// Protobuf imports
+
+// Local Imports
+
+package proto.energyMeter.v1;
+
+option go_package = "https://github.com/victorcel/proto-enertbit-grpc-models/pkg/v1/energyMeter;energyMeterv1";
+
+message EnergyMeters{
+  // @inject_tag: bson:"id" json:"id"
+  string id = 1;
+  // @inject_tag: bson:"id" json:"id"
+  string brand = 2;
+  // @inject_tag: bson:"address" json:"address"
+  string address = 3;
+  // @inject_tag: bson:"installation_date" json:"installation_date"
+  string installation_date = 4;
+  // @inject_tag: bson:"retirement_date" json:"retirement_date"
+  string retirement_date = 5;
+  // @inject_tag: bson:"serial" json:"serial"
+  string serial = 6;
+  // @inject_tag: bson:"lines" json:"lines"
+  int32 lines = 7;
+  // @inject_tag: bson:"is_active" json:"is_active"
+  bool is_active = 8;
+  // @inject_tag: bson:"created_at" json:"created_at"
+  string created_at = 9;
+}
+
+message IdRequest{
+  // @inject_tag: bson:"id" json:"id"
+  string id = 1;
+}
+
+message BoolResponse {
+  bool response = 1;
+}
